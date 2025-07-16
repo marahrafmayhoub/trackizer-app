@@ -1,44 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
-import 'package:trackizer/core/widgets/custom_button.dart';
-import 'package:trackizer/core/widgets/gradient_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:trackizer/features/screens/auth/welcome_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.myBackground,
-      appBar: AppBar(title: Text('data')),
-
-      body: Padding(
-        padding: const EdgeInsets.only(top: 200),
-        child: Center(
-          child: Column(
-            children: [
-              gradientButton(text: 'heoll', onPressed: () {}),
-
-              SizedBox(height: 40,),
-              customButton(text: 'meme',onPressed: (){}),
-            ],
-          ),
+    return ScreenUtilInit(
+       designSize: const Size(375, 812),
+       minTextAdapt: true,
+      splitScreenMode: true,
+      child: MaterialApp(
+        title: 'Trackizer',
+        theme: ThemeData(
+          fontFamily: 'Inter',
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
+        debugShowCheckedModeBanner: false,
+        home: const WelcomeScreen(),
       ),
     );
   }
