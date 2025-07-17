@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:trackizer/features/screens/auth/welcome_screen.dart';
+// import 'package:trackizer/features/screens/subscriptions/add_subscription_screen.dart';
 // import 'package:trackizer/features/screens/cards/credit_cards_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,8 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-       designSize: const Size(375, 812),
-       minTextAdapt: true,
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
         title: 'Trackizer',
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
         debugShowCheckedModeBanner: false,
-        home: const WelcomeScreen(),
+        home: WelcomeScreen(),
       ),
     );
   }
