@@ -66,7 +66,9 @@ flutter:
     - assets/images/welcomeScreen_images/left_Bubble.png
     - assets/images/welcomeScreen_images/blury.png
     - assets/fonts/
-
+    - assets/images/hbo_go_logo.png
+    - assets/images/One_drive.png
+    - assets/images/spotify.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
