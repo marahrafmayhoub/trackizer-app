@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
                       alignment: Alignment.topCenter,
                       child: Transform.translate(
                         offset: Offset(0.w, 60.h),
-                        child: mainLogo(),
+                        child: MainLogo(),
                       ),
                     ),
                     Bubble(
@@ -70,13 +68,13 @@ class WelcomeScreen extends StatelessWidget {
                 SizedBox(height: 60.h),
                 Column(
                   children: [
-                    appText(
+                    AppText(
                       text: 'Spend Less.. Save More',
                       fontWeight: FontWeight.w700,
                     ),
                     SizedBox(height: 60.h),
-                    gradientButton(text: 'Get started', onPressed: () {}),
-                    customButton(text: 'I have an account', onPressed: () {}),
+                    GradientButton(text: 'Get started', onPressed: () {}),
+                    CustomButton(text: 'I have an account', onPressed: () {}),
                   ],
                 ),
               ],

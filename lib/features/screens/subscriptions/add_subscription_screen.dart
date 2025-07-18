@@ -190,7 +190,7 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: SizedBox(
                   width: double.infinity,
-                  child: gradientButton(
+                  child: GradientButton(
                     text: "Add this platform",
                     onPressed: () {
                       print(

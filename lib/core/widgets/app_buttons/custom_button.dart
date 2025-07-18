@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:trackizer/core/constants/app_colors.dart';
 
-// ignore: camel_case_types
-class customButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final double width;
   final double height;
 
-  const customButton({
+  const CustomButton({
     super.key,
     required this.text,
     required this.onPressed,
