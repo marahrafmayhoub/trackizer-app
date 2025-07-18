@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.2.0
   flutter_screenutil: ^5.9.3
+  dotted_border: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -61,10 +62,19 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/logo.svg
-    - assets/images/welcomeScreen_images/Frame.svg
-    - assets/images/welcomeScreen_images/right_Bubble.png
-    - assets/images/welcomeScreen_images/left_Bubble.png
+    - assets/images/welcomeScreen_images/welcomeIcons.svg
+    - assets/images/welcomeScreen_images/right_bubble.svg
+    - assets/images/welcomeScreen_images/left_bubble.png
+    # - assets/images/welcomeScreen_images/welimage.png
     - assets/images/welcomeScreen_images/blury.png
+    - assets/images/credit_card_screen_images/MasterCardLogo.svg
+    - assets/images/credit_card_screen_images/Vector.svg
+    - assets/images/credit_card_screen_images/add.svg
+    - assets/icons/Settings.svg
+    - assets/icons/spotify.svg
+    - assets/icons/youtube.svg
+    - assets/icons/cloud.svg
+    - assets/icons/netflix.svg
     - assets/fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
