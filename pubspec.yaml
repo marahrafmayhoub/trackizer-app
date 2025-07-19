@@ -37,6 +37,11 @@ dependencies:
     # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  flutter_svg: ^2.2.0
+  flutter_screenutil: ^5.9.3
+  dotted_border: ^3.1.0
+  dotted_line: ^3.2.3
+  curved_navigation_bar: ^1.0.6
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +70,25 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/logo.svg
+    - assets/images/welcomeScreen_images/welcomeIcons.svg
+    - assets/images/welcomeScreen_images/right_bubble.svg
+    - assets/images/welcomeScreen_images/left_bubble.png
+    # - assets/images/welcomeScreen_images/welimage.png
+    - assets/images/welcomeScreen_images/blury.png
+    - assets/images/credit_card_screen_images/MasterCardLogo.svg
+    - assets/images/credit_card_screen_images/Vector.svg
+    - assets/images/credit_card_screen_images/add.svg
+    - assets/images/subscription_info_images/Ellipse.svg
+    - assets/icons/Settings.svg
+    - assets/icons/spotify.svg
+    - assets/icons/youtube.svg
+    - assets/icons/cloud.svg
+    - assets/icons/netflix.svg
+    - assets/icons/header_icons/ArrowDown.svg
+    - assets/icons/header_icons/Trash.svg
+    - assets/fonts/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
