@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:trackizer/features/screens/auth/welcome_screen.dart';
+import 'package:trackizer/features/screens/settings/settings_screen.dart';
 import 'package:trackizer/features/screens/subscriptions/add_subscription_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
         debugShowCheckedModeBanner: false,
-        home: AddSubscriptionScreen(),
+        home: SettingsScreen(),
       ),
     );
   }
