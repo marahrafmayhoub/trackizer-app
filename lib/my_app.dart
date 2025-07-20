@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:trackizer/features/screens/calendar/calendar_screen.dart';
-import 'package:trackizer/features/screens/auth/register/register1_screen.dart';
-import 'package:trackizer/features/screens/auth/register/register2_screen.dart';
-import 'package:trackizer/features/screens/auth/welcome_screen.dart';
-// import 'package:trackizer/features/screens/auth/welcome_screen.dart';
-import 'package:trackizer/features/screens/cards/credit_cards_screen.dart';
-import 'package:trackizer/features/screens/subscriptions/subscription_info_screen.dart';
-// import 'package:trackizer/features/screens/subscriptions/add_subscription_screen.dart';
-
+import 'package:trackizer_ui/features/screens/home/home_upcoming_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -26,7 +18,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
         debugShowCheckedModeBanner: false,
-        home: CalendarScreen(),
+        home: Home2(),
       ),
     );
   }

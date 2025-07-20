@@ -107,7 +107,7 @@ class _Register2State extends State<Register2> {
                   ),
                 ),
                 SizedBox(height: 20),
-                // SecondaryButton(text: 'Sign Up', onPressed: () {}),
+                
                 customButton(text: 'Sign Up', onPressed: () {}),
               ],
             ),
