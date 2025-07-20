@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
+import 'package:trackizer_ui/core/constants/app_colors.dart';
 
 class LabeledTextField extends StatelessWidget {
   final String label;
@@ -25,7 +25,7 @@ class LabeledTextField extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            color: AppColors.mysecondrytext,
+            color: AppColors.myText,
             fontSize: 12,
             fontWeight: FontWeight.w500,
           ),
