@@ -24,7 +24,7 @@ class _Register1ScreenState extends State<Register1> {
           GradientButton(
             text: 'Sign Up with Apple',
             onPressed: () {},
-            gradientColors: [Color(0xff101010), Color(0xff000000)], textColor: AppColors.myWhite,
+            gradientColors: [Color(0xff101010), Color(0xff000000)],
           ),
           GradientButton(
             text: "Sign Up with Google",
@@ -35,7 +35,7 @@ class _Register1ScreenState extends State<Register1> {
             text: 'Sign Up with Facebook',
             
             onPressed: () {},
-            gradientColors: [Color(0xff3483E9), Color(0xff1771E6)], textColor: AppColors.myWhite,
+            gradientColors: [Color(0xff3483E9), Color(0xff1771E6)],
           ),
           SizedBox(height: 40),
           Container(
@@ -50,7 +50,7 @@ class _Register1ScreenState extends State<Register1> {
             child: Text(
               "By registering, you agree to our Terms of Use. Learn how we collect, use and share your data.",
               style: TextStyle(
-                color: AppColors.mysecondrytext,
+                color: AppColors.myText,
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
                 

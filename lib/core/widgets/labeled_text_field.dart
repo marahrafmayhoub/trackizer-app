@@ -25,7 +25,7 @@ class LabeledTextField extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            color: AppColors.mysecondrytext,
+            color: AppColors.myText,
             fontSize: 12,
             fontWeight: FontWeight.w500,
           ),

@@ -29,9 +29,9 @@ class InfoColumn extends StatelessWidget {
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
       children: [
-        AppText(text: title, fontSize: titleFontSize),
+        AppText(text: title, fontSize: titleFontSize,fontWeight: FontWeight.w700,),
         AppText(
-          text: subtitle,
+          text: subtitle,fontWeight: FontWeight.w500,
           fontSize: subtitleFontSize,
           color: subtitleColor ?? AppColors.myText,
         ),
