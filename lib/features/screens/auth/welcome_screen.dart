@@ -74,6 +74,8 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 60.h),
                     GradientButton(text: 'Get started', onPressed: () {}, textColor: AppColors.myWhite,),
+
+                    SizedBox(height: 16.h,),
                     CustomButton(text: 'I have an account', onPressed: () {}),
                   ],
                 ),

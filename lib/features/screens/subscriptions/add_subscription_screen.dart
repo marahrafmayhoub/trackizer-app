@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trackizer_ui/core/constants/app_colors.dart';
 import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer_ui/core/widgets/header.dart';
+// import 'package:trackizer_ui/screens/login_screen.dart' hide AppColors;
 
 class AddSubscriptionScreen extends StatefulWidget {
   const AddSubscriptionScreen({super.key});
@@ -40,12 +42,13 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
                 ),
                 child: Column(
                   children: [
+                    // HeaderWithIcons(text: 'New',icons: [HeaderIcon(assetPath: 'assetPath', alignment: alignment)],)
                     Row(
                       children: [
                         GestureDetector(
                           onTap: () => Navigator.pop(context),
                           child: const Icon(
-                            Icons.arrow_back,
+                            Icons.keyboard_arrow_left,
                             color: AppColors.myGrey,
                           ),
                         ),
@@ -86,9 +89,8 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          buildLogoBox(
+                          Image.asset(
                             'assets/images/One_drive.png',
-                            screenWidth,
                           ),
                           const SizedBox(width: 16),
                           Column(
@@ -197,6 +199,7 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
                         'Added: ${descriptionController.text} | $monthlyPrice SP',
                       );
                     }, textColor: AppColors.myWhite,
+                    }
                   ),
                 ),
               ),

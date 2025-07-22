@@ -22,7 +22,7 @@ class HeaderWithIcons extends StatelessWidget {
     return Stack(
       children: [
         Align(
-          alignment: Alignment.center,
+          alignment: Alignment.topCenter,
           child: AppText(
             text: text,
             fontSize: fontSize,

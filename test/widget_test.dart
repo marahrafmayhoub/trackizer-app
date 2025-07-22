@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:trackizer_ui/my_app.dart';
 
 // ignore: depend_on_referenced_packages
 import 'package:trackizer_ui/main.dart';

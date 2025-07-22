@@ -85,7 +85,7 @@ class _Register2State extends State<Register2> {
                 Text(
                   "Use 8 or more characters with a mix of letters, numbers & symbols.",
                   style: TextStyle(
-                    color: AppColors.mysecondrytext,
+                    color: AppColors.myText,
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
                   ),
@@ -94,7 +94,7 @@ class _Register2State extends State<Register2> {
                 
                 GradientButton(
                   text: ' Get started, it’s free!',
-                  onPressed: () {}, textColor: AppColors.myWhite,
+                  onPressed: () {},
                 ),
                 SizedBox(height: 80),
                 Text(
@@ -107,6 +107,8 @@ class _Register2State extends State<Register2> {
                   ),
                 ),
                 SizedBox(height: 20),
+                // SecondaryButton(text: 'Sign Up', onPressed: () {}),
+//                 CustomButton(text: 'Sign Up', onPressed: () {}),
                 
                 CustomButton(text: 'Sign Up', onPressed: () {}),
               ],

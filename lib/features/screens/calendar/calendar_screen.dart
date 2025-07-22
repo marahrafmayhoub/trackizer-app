@@ -60,8 +60,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              AppText(text: 'subs', fontSize: 40),
-                              AppText(text: 'Schedule', fontSize: 40),
+                              AppText(text: 'subs', fontSize: 40,fontWeight: FontWeight.w700),
+                              AppText(text: 'Schedule', fontSize: 40,fontWeight: FontWeight.w700),
                             ],
                           ),
                           SizedBox(height: 22.h),
@@ -69,7 +69,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                             children: [
                               AppText(
                                 text: '3 subscriptions for today',
-                                fontSize: 14,
+                                fontSize: 14,fontWeight: FontWeight.w600,
                                 color: AppColors.myText,
                               ),
                               Spacer(),
@@ -87,7 +87,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                                     ),
                                     child: Row(
                                       children: [
-                                        AppText(text: 'January', fontSize: 12),
+                                        AppText(text: 'January', fontSize: 12,fontWeight: FontWeight.w600,),
                                         SizedBox(width: 2),
                                         Icon(
                                           Icons.keyboard_arrow_down,
@@ -180,8 +180,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                         children: [
                           SvgPicture.asset(item.iconPath),
                           Spacer(),
-                          AppText(text: item.name, fontSize: 14),
-                          AppText(text: item.price, fontSize: 20),
+                          AppText(text: item.name, fontSize: 14,fontWeight: FontWeight.w600,),
+                          AppText(text: item.price, fontSize: 20,fontWeight: FontWeight.w700,),
                         ],
                       ),
                     ),
