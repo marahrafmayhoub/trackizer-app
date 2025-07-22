@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
+import 'package:trackizer_ui/core/constants/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;

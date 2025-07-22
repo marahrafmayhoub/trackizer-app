@@ -1,7 +1,7 @@
 // info_column.dart
 import 'package:flutter/material.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
-import 'package:trackizer/core/widgets/app_text.dart';
+import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer_ui/core/widgets/app_text.dart';
 
 class InfoColumn extends StatelessWidget {
   final String title;

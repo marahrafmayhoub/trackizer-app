@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
-import 'package:trackizer/core/widgets/app_buttons/custom_button.dart';
-import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
-import 'package:trackizer/core/widgets/labeled_text_field.dart';
-import 'package:trackizer/core/widgets/main_logo.dart';
+import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer_ui/core/widgets/app_buttons/custom_button.dart';
+import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer_ui/core/widgets/labeled_text_field.dart';
+import 'package:trackizer_ui/core/widgets/main_logo.dart';
 
 class Register2 extends StatefulWidget {
   const Register2({super.key});
@@ -24,7 +24,7 @@ class _Register2State extends State<Register2> {
             child: Column(
               children: [
                 SizedBox(height: 58),
-                mainLogo(width: 146, height: 24),
+                MainLogo(width: 146, height: 24),
                 SizedBox(height: 165),
                 
                 LabeledTextField(label: "E-mail address"),
@@ -92,7 +92,7 @@ class _Register2State extends State<Register2> {
                 ),
                 SizedBox(height: 40),
                 
-                gradientButton(
+                GradientButton(
                   text: ' Get started, it’s free!',
                   onPressed: () {}, textColor: AppColors.myWhite,
                 ),
@@ -108,7 +108,7 @@ class _Register2State extends State<Register2> {
                 ),
                 SizedBox(height: 20),
                 
-                customButton(text: 'Sign Up', onPressed: () {}),
+                CustomButton(text: 'Sign Up', onPressed: () {}),
               ],
             ),
           ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
-import 'package:trackizer/core/widgets/home_card_1.dart';
-import 'package:trackizer/core/widgets/home_card_2.dart';
-import 'package:trackizer/core/widgets/main_logo.dart';
-import 'package:trackizer/core/widgets/statistics_home_card.dart';
+import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer_ui/core/widgets/home_card_1.dart';
+import 'package:trackizer_ui/core/widgets/home_card_2.dart';
+import 'package:trackizer_ui/core/widgets/main_logo.dart';
+import 'package:trackizer_ui/core/widgets/statistics_home_card.dart';
 
 class Home2 extends StatefulWidget {
   const Home2({super.key});
@@ -77,7 +77,7 @@ class _Home2State extends State<Home2> with SingleTickerProviderStateMixin {
                                 margin: EdgeInsets.only(top: 64),
                                 child: Column(
                                   children: [
-                                    mainLogo(width: 107, height: 19),
+                                    MainLogo(width: 107, height: 19),
                                     SizedBox(height: 16),
                                     Text(
                                       '1,235 SP',

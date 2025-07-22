@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
-import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
 
 class AddSubscriptionScreen extends StatefulWidget {
   const AddSubscriptionScreen({super.key});
@@ -196,7 +196,7 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
                       print(
                         'Added: ${descriptionController.text} | $monthlyPrice SP',
                       );
-                    },
+                    }, textColor: AppColors.myWhite,
                   ),
                 ),
               ),

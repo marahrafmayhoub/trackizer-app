@@ -2,12 +2,13 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
-import 'package:trackizer/core/widgets/app_text.dart';
-import 'package:trackizer/core/widgets/credit_cards_widgets/circle_card.dart';
-import 'package:trackizer/core/widgets/credit_cards_widgets/custom_card.dart';
-import 'package:trackizer/core/widgets/credit_cards_widgets/custom_icons.dart';
-import 'package:trackizer/core/widgets/header.dart';
+import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer_ui/core/widgets/app_text.dart';
+import 'package:trackizer_ui/core/widgets/credit_cards_widgets/circle_card.dart';
+import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_card.dart';
+import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_icons.dart';
+import 'package:trackizer_ui/core/widgets/header.dart';
+
 
 class CreditCardsScreen extends StatefulWidget {
   const CreditCardsScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:trackizer/core/widgets/app_text.dart';
+import 'package:trackizer_ui/core/widgets/app_text.dart';
 
 class HeaderWithIcons extends StatelessWidget {
   final String text;

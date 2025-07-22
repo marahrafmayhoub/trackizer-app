@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:trackizer_ui/features/screens/home/home_upcoming_screen.dart';
 import 'screens/login_screen.dart'; //
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: const LoginScreen(),
+        home: Home2(),
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
+
 
 class GradientButton extends StatelessWidget {
   final String text;

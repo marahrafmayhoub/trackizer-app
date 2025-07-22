@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer/core/constants/app_colors.dart';
-import 'package:trackizer/core/widgets/app_buttons/custom_button.dart';
-import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
-import 'package:trackizer/core/widgets/main_logo.dart';
+import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer_ui/core/widgets/app_buttons/custom_button.dart';
+import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer_ui/core/widgets/main_logo.dart';
 
 class Register1 extends StatefulWidget {
   const Register1({super.key});
@@ -19,19 +19,19 @@ class _Register1ScreenState extends State<Register1> {
       body: ListView(
         padding: EdgeInsets.only(top: 58, right: 24, left: 24),
         children: [
-          mainLogo(width: 146, height: 24),
+          MainLogo(width: 146, height: 24),
           SizedBox(height: 312),
-          gradientButton(
+          GradientButton(
             text: 'Sign Up with Apple',
             onPressed: () {},
             gradientColors: [Color(0xff101010), Color(0xff000000)], textColor: AppColors.myWhite,
           ),
-          gradientButton(
+          GradientButton(
             text: "Sign Up with Google",
             onPressed: () {},
             gradientColors: [Color(0xffFEFEFE), Color(0xffFFFFFF)], textColor: AppColors.myBlack,
           ),
-          gradientButton(
+          GradientButton(
             text: 'Sign Up with Facebook',
             
             onPressed: () {},
@@ -44,7 +44,7 @@ class _Register1ScreenState extends State<Register1> {
             ),
           ),
           SizedBox(height: 40),
-          customButton(text: 'Sign Up with E-mail', onPressed: () {}),
+          CustomButton(text: 'Sign Up with E-mail', onPressed: () {}),
           SizedBox(height: 24),
           Container(
             child: Text(
