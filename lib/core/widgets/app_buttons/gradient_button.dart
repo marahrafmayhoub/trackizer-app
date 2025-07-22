@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:trackizer_ui/core/constants/app_colors.dart';
 
-class gradientButton extends StatelessWidget {
+class GradientButton extends StatelessWidget {
   final String text;
   final List<Color> gradientColors;
   final List<BoxShadow>? boxShadow;
@@ -8,16 +9,19 @@ class gradientButton extends StatelessWidget {
   final double width;
   final double height;
   final VoidCallback onPressed;
+  final Color textColor;
 
-  const gradientButton({
-    Key? key,
+  const GradientButton({
+    super.key,
     required this.text,
     this.gradientColors = const [Color(0xffffA726), Color(0xffFF7F37)],
     this.boxShadow,
     this.width = 324,
     this.height = 48,
-    required this.onPressed,
-  }) : super(key: key);
+    required this.onPressed, 
+     this.textColor = AppColors.myWhite,
+  });
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +58,7 @@ class gradientButton extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-              color: Colors.white,
+              color: textColor,
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
