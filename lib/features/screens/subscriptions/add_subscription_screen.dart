@@ -198,6 +198,7 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
                       print(
                         'Added: ${descriptionController.text} | $monthlyPrice SP',
                       );
+                    }, textColor: AppColors.myWhite,
                     }
                   ),
                 ),

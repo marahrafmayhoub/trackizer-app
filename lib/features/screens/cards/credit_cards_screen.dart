@@ -6,6 +6,9 @@ import 'package:trackizer_ui/core/constants/app_colors.dart';
 import 'package:trackizer_ui/core/widgets/app_text.dart';
 import 'package:trackizer_ui/core/widgets/credit_cards_widgets/circle_card.dart';
 import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_card.dart';
+import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_icons.dart';
+import 'package:trackizer_ui/core/widgets/header.dart';
+
 import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_icons.dart'
     show CustomIcon;
 import 'package:trackizer_ui/core/widgets/header.dart';
