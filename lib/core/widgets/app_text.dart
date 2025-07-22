@@ -9,6 +9,7 @@ class AppText extends StatelessWidget {
   final FontWeight fontWeight;
   final Color color;
   final TextAlign textAlign;
+  final FontStyle fontStyle;
 
   const AppText({
     super.key,
@@ -17,6 +18,7 @@ class AppText extends StatelessWidget {
     this.fontWeight = FontWeight.w400,
     this.color = AppColors.myWhite,
     this.textAlign = TextAlign.start,
+    this.fontStyle = FontStyle.normal,
   });
 
   @override
@@ -24,8 +26,11 @@ class AppText extends StatelessWidget {
     return Text(
       text,
       textAlign: textAlign,
-      style: GoogleFonts.inter(fontWeight: fontWeight,color: color,fontSize: fontSize.sp),
-    
+      style: GoogleFonts.inter(
+        fontWeight: fontWeight,
+        color: color,
+        fontSize: fontSize.sp,fontStyle: fontStyle
+      ),
     );
   }
 }

@@ -26,10 +26,10 @@ class _Register2State extends State<Register2> {
                 SizedBox(height: 58),
                 MainLogo(width: 146, height: 24),
                 SizedBox(height: 165),
-                
+
                 LabeledTextField(label: "E-mail address"),
                 SizedBox(height: 16),
-                
+
                 LabeledTextField(label: "Password"),
                 SizedBox(height: 24),
                 Row(
@@ -45,7 +45,6 @@ class _Register2State extends State<Register2> {
                         ),
                         height: 5,
                         width: 79,
-                        
                       ),
                     ),
                     SizedBox(width: 3),
@@ -76,7 +75,6 @@ class _Register2State extends State<Register2> {
                         ),
                         height: 5,
                         width: 79,
-                        
                       ),
                     ),
                   ],
@@ -91,7 +89,7 @@ class _Register2State extends State<Register2> {
                   ),
                 ),
                 SizedBox(height: 40),
-                
+
                 GradientButton(
                   text: ' Get started, it’s free!',
                   onPressed: () {},
@@ -109,6 +107,8 @@ class _Register2State extends State<Register2> {
                 SizedBox(height: 20),
                 // SecondaryButton(text: 'Sign Up', onPressed: () {}),
                 CustomButton(text: 'Sign Up', onPressed: () {}),
+
+                // customButton(text: 'Sign Up', onPressed: () {}),
               ],
             ),
           ),
@@ -117,5 +117,3 @@ class _Register2State extends State<Register2> {
     );
   }
 }
-
-

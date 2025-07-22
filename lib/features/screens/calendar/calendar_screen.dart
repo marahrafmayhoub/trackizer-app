@@ -60,8 +60,16 @@ class _CalendarScreenState extends State<CalendarScreen> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              AppText(text: 'subs', fontSize: 40,fontWeight: FontWeight.w700),
-                              AppText(text: 'Schedule', fontSize: 40,fontWeight: FontWeight.w700),
+                              AppText(
+                                text: 'subs',
+                                fontSize: 40,
+                                fontWeight: FontWeight.w700,
+                              ),
+                              AppText(
+                                text: 'Schedule',
+                                fontSize: 40,
+                                fontWeight: FontWeight.w700,
+                              ),
                             ],
                           ),
                           SizedBox(height: 22.h),
@@ -69,7 +77,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                             children: [
                               AppText(
                                 text: '3 subscriptions for today',
-                                fontSize: 14,fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
                                 color: AppColors.myText,
                               ),
                               Spacer(),
@@ -87,7 +96,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
                                     ),
                                     child: Row(
                                       children: [
-                                        AppText(text: 'January', fontSize: 12,fontWeight: FontWeight.w600,),
+                                        AppText(
+                                          text: 'January',
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                         SizedBox(width: 2),
                                         Icon(
                                           Icons.keyboard_arrow_down,
@@ -114,12 +127,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
                                     width: 48.w,
                                     height: 103.h,
                                     decoration: BoxDecoration(
-                                      color:
-                                          index == 0
-                                              ? Color(0xff4E4E61)
-                                              : Color(
-                                                0xff4E4E61,
-                                              ).withOpacity(0.2),
+                                      color: index == 0
+                                          ? Color(0xff4E4E61)
+                                          : Color(0xff4E4E61).withOpacity(0.2),
                                       borderRadius: BorderRadius.circular(16),
                                     ),
                                     child: Padding(
@@ -180,8 +190,16 @@ class _CalendarScreenState extends State<CalendarScreen> {
                         children: [
                           SvgPicture.asset(item.iconPath),
                           Spacer(),
-                          AppText(text: item.name, fontSize: 14,fontWeight: FontWeight.w600,),
-                          AppText(text: item.price, fontSize: 20,fontWeight: FontWeight.w700,),
+                          AppText(
+                            text: item.name,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          AppText(
+                            text: item.price,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ],
                       ),
                     ),
@@ -190,6 +208,103 @@ class _CalendarScreenState extends State<CalendarScreen> {
               ),
             ),
           ],
+        ),
+      ),
+
+      floatingActionButton: Transform.translate(
+        offset: const Offset(12, 5),
+        child: GestureDetector(
+          onTap: () {},
+          child: Container(
+            width: 56,
+            height: 56,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: const LinearGradient(
+                colors: [Color(0xffFF8500), Color(0xffFF8500)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xffffA726).withOpacity(0.4),
+                  blurRadius: 12,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            child: const Icon(Icons.add, color: Colors.white, size: 28),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      // الشريط السفلي
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 12, left: 12, right: 12),
+        child: PhysicalModel(clipBehavior: Clip.hardEdge,
+
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(30),
+          elevation: 8,
+          shadowColor: Colors.black.withOpacity(0.6),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: BottomAppBar(
+              shape: const CircularNotchedRectangle(),
+              notchMargin: 16,
+              color: const Color(0xFF353542),
+              child: SizedBox(
+                width: 328, //
+                height: 64, //
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    //  (Home + Budgets)
+                    Row(
+                      children: [
+                        const SizedBox(width: 16), // مسافة من اليسار
+                        // SvgPicture.asset(
+                        //   'assets/home.svg',
+                        //   width: 24,
+                        //   height: 24,
+                        //   colorFilter: const ColorFilter.mode(
+                        //     Colors.white,
+                        //     BlendMode.srcIn,
+                        //   ),
+                        // ),
+                        Icon(Icons.home),
+                        const SizedBox(width: 24),
+
+                        Icon(Icons.home),
+                        // SvgPicture.asset(
+                        //   'assets/Budgets.svg',
+                        //   width: 24,
+                        //   height: 24,
+                        //   colorFilter: const ColorFilter.mode(
+                        //     Colors.grey,
+                        //     BlendMode.srcIn,
+                        //   ),
+                        // ),
+                      ],
+                    ),
+
+                    // (Calendar + Credit Cards)
+                    Row(
+                      children: [
+                        Icon(Icons.calendar_month),
+
+                        const SizedBox(width: 24),
+
+                        Icon(Icons.credit_card),
+                        const SizedBox(width: 16), // مسافة من اليمين
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );

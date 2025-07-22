@@ -89,7 +89,7 @@ class BudgetsPage extends StatelessWidget {
             Container(
               width: 328.w,
 
-              padding: const EdgeInsets.symmetric(vertical: 18),
+              padding: const EdgeInsets.symmetric(vertical: 8),
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(16),
@@ -121,6 +121,104 @@ class BudgetsPage extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+
+      floatingActionButton: Transform.translate(
+        offset: const Offset(12, 5),
+        child: GestureDetector(
+          onTap: () {},
+          child: Container(
+            width: 56,
+            height: 56,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: const LinearGradient(
+                colors: [Color(0xffFF8500), Color(0xffFF8500)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xffffA726).withOpacity(0.4),
+                  blurRadius: 12,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            child: const Icon(Icons.add, color: Colors.white, size: 28),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      // الشريط السفلي
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 16, left: 12, right: 12),
+        child: PhysicalModel(
+          clipBehavior: Clip.hardEdge,
+
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(16),
+          elevation: 8,
+          shadowColor: Colors.black.withOpacity(0.6),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: BottomAppBar(
+              shape: const CircularNotchedRectangle(),
+              notchMargin: 16,
+              color: const Color(0xFF353542),
+              child: SizedBox(
+                width: 328, //
+                height: 64, //
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    //  (Home + Budgets)
+                    Row(
+                      children: [
+                        const SizedBox(width: 16), // مسافة من اليسار
+                        // SvgPicture.asset(
+                        //   'assets/home.svg',
+                        //   width: 24,
+                        //   height: 24,
+                        //   colorFilter: const ColorFilter.mode(
+                        //     Colors.white,
+                        //     BlendMode.srcIn,
+                        //   ),
+                        // ),
+                        Icon(Icons.home),
+                        const SizedBox(width: 24),
+
+                        Icon(Icons.home),
+                        // SvgPicture.asset(
+                        //   'assets/Budgets.svg',
+                        //   width: 24,
+                        //   height: 24,
+                        //   colorFilter: const ColorFilter.mode(
+                        //     Colors.grey,
+                        //     BlendMode.srcIn,
+                        //   ),
+                        // ),
+                      ],
+                    ),
+
+                    // (Calendar + Credit Cards)
+                    Row(
+                      children: [
+                        Icon(Icons.calendar_month),
+
+                        const SizedBox(width: 24),
+
+                        Icon(Icons.credit_card),
+                        const SizedBox(width: 16), // مسافة من اليمين
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );

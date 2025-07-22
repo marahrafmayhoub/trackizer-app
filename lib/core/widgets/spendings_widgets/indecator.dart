@@ -16,7 +16,7 @@ class HalfCircleBudgetGauge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200.h,
+      height: 105.h,
       child: SfRadialGauge(enableLoadingAnimation: true,
         axes: <RadialAxis>[
           RadialAxis(

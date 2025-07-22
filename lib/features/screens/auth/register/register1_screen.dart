@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trackizer_ui/core/constants/app_colors.dart';
 import 'package:trackizer_ui/core/widgets/app_buttons/custom_button.dart';
 import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer_ui/core/widgets/app_text.dart';
 import 'package:trackizer_ui/core/widgets/main_logo.dart';
 
 class Register1 extends StatefulWidget {
@@ -29,32 +30,33 @@ class _Register1ScreenState extends State<Register1> {
           GradientButton(
             text: "Sign Up with Google",
             onPressed: () {},
-            gradientColors: [Color(0xffFEFEFE), Color(0xffFFFFFF)], textColor: AppColors.myBlack,
+            gradientColors: [Color(0xffFEFEFE), Color(0xffFFFFFF)],
+            textColor: AppColors.myBlack,
           ),
           GradientButton(
             text: 'Sign Up with Facebook',
-            
+
             onPressed: () {},
             gradientColors: [Color(0xff3483E9), Color(0xff1771E6)],
           ),
           SizedBox(height: 40),
           Container(
             child: Center(
-              child: Text('or', style: TextStyle(color: AppColors.myWhite)),
+              child: AppText(text: 'or', color: AppColors.myWhite),
             ),
           ),
+
           SizedBox(height: 40),
           CustomButton(text: 'Sign Up with E-mail', onPressed: () {}),
           SizedBox(height: 24),
           Container(
-            child: Text(
-              "By registering, you agree to our Terms of Use. Learn how we collect, use and share your data.",
-              style: TextStyle(
-                color: AppColors.myText,
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                
-              ),textAlign:TextAlign.center ,
+            child: AppText(
+              text:
+                  "By registering, you agree to our Terms of Use. Learn how we collect, use and share your data.",
+              color: AppColors.myText,
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+              textAlign: TextAlign.center,
             ),
           ),
         ],
