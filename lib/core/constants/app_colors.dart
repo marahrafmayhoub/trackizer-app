@@ -10,7 +10,6 @@ class AppColors {
   static const Color myWhite = Color(0xffFFFFFF);
   static const Color myBackground = Color(0xff1C1C23);
   static const Color mybordercolor = Color(0xff353542);
-  static const Color mysecondrytext = Color(0xff666680);
   static const Color myText = Color(0xff666680);
 }
 
