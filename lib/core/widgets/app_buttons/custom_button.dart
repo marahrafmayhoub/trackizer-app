@@ -43,7 +43,7 @@ class CustomButton extends StatelessWidget {
         padding: EdgeInsets.all(1),
         child: Container(
           decoration: BoxDecoration(
-            color: Color(0xff252530), 
+            color: Color(0xff252530),
             borderRadius: BorderRadius.circular(999),
           ),
           child: ElevatedButton(
@@ -51,7 +51,7 @@ class CustomButton extends StatelessWidget {
               backgroundColor: Colors.transparent,
               shadowColor: Colors.transparent,
               elevation: 0,
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+              padding: EdgeInsets.zero,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(999),
               ),

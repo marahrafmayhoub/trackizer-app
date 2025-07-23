@@ -6,15 +6,12 @@ import 'package:trackizer_ui/core/constants/app_colors.dart';
 import 'package:trackizer_ui/core/widgets/app_text.dart';
 import 'package:trackizer_ui/core/widgets/credit_cards_widgets/circle_card.dart';
 import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_card.dart';
-<<<<<<< HEAD
 import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_icons.dart';
 import 'package:trackizer_ui/core/widgets/header.dart';
 
-=======
 import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_icons.dart'
     show CustomIcon;
 import 'package:trackizer_ui/core/widgets/header.dart';
->>>>>>> 0ef4417abefadcb8d98f6235cbc2cdacf1713428
 
 class CreditCardsScreen extends StatefulWidget {
   const CreditCardsScreen({super.key});
@@ -35,7 +32,7 @@ class _MyWidgetState extends State<CreditCardsScreen> {
             child: Column(
               children: [
                 HeaderWithIcons(
-                  text: 'text',
+                  text: 'Credit Cards',
                   icons: [
                     HeaderIcon(
                       assetPath: 'assets/icons/Settings.svg',
@@ -160,8 +157,8 @@ class _MyWidgetState extends State<CreditCardsScreen> {
                 //   ),
                 // ),
 
-                SizedBox(height: 23),
-                AppText(text: 'Subscriptions', fontSize: 16),
+                SizedBox(height: 24),
+                AppText(text: 'Subscriptions', fontSize: 16,fontWeight: FontWeight.w600,),
                 SizedBox(height: 16),
 
                 Padding(

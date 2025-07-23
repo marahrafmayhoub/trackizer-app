@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-<<<<<<< HEAD
 import 'package:trackizer_ui/core/constants/app_colors.dart';
 
-=======
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trackizer_ui/core/constants/app_colors.dart';
->>>>>>> 0ef4417abefadcb8d98f6235cbc2cdacf1713428
 
 class AppText extends StatelessWidget {
   final String text;
@@ -14,7 +11,7 @@ class AppText extends StatelessWidget {
   final FontWeight fontWeight;
   final Color color;
   final TextAlign textAlign;
-
+  final FontStyle fontstyle;
   const AppText({
     super.key,
     required this.text,
@@ -22,6 +19,7 @@ class AppText extends StatelessWidget {
     this.fontWeight = FontWeight.w400,
     this.color = AppColors.myWhite,
     this.textAlign = TextAlign.start,
+    this.fontstyle = FontStyle.normal,
   });
 
   @override
@@ -29,8 +27,12 @@ class AppText extends StatelessWidget {
     return Text(
       text,
       textAlign: textAlign,
-      style: GoogleFonts.inter(fontWeight: fontWeight,color: color,fontSize: fontSize.sp),
-    
+      style: GoogleFonts.inter(
+        fontWeight: fontWeight,
+        color: color,
+        fontSize: fontSize.sp,
+        fontStyle: fontstyle,
+      ),
     );
   }
 }

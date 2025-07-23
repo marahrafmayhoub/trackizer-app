@@ -61,3 +61,6 @@ flutter:
     - assets/images/Spotify Logo.png
     - assets/images/YT Premium Lgoo.png
     - assets/images/OneDrive Logo.png
+    - assets/icons/Google.svg
+    - assets/icons/Facebook.svg
+    - assets/icons/Apple.svg

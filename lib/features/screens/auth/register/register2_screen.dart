@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:trackizer_ui/core/constants/app_colors.dart';
 import 'package:trackizer_ui/core/widgets/app_buttons/custom_button.dart';
 import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer_ui/core/widgets/app_text.dart';
 import 'package:trackizer_ui/core/widgets/labeled_text_field.dart';
 import 'package:trackizer_ui/core/widgets/main_logo.dart';
 
@@ -23,13 +25,13 @@ class _Register2State extends State<Register2> {
           Form(
             child: Column(
               children: [
-                SizedBox(height: 58),
+                SizedBox(height: 58.h),
                 MainLogo(width: 146, height: 24),
-                SizedBox(height: 165),
-                
+                SizedBox(height: 165.h),
+
                 LabeledTextField(label: "E-mail address"),
                 SizedBox(height: 16),
-                
+
                 LabeledTextField(label: "Password"),
                 SizedBox(height: 24),
                 Row(
@@ -45,7 +47,6 @@ class _Register2State extends State<Register2> {
                         ),
                         height: 5,
                         width: 79,
-                        
                       ),
                     ),
                     SizedBox(width: 3),
@@ -76,40 +77,35 @@ class _Register2State extends State<Register2> {
                         ),
                         height: 5,
                         width: 79,
-                        
                       ),
                     ),
                   ],
                 ),
                 SizedBox(height: 24),
-                Text(
-                  "Use 8 or more characters with a mix of letters, numbers & symbols.",
-                  style: TextStyle(
-                    color: AppColors.myText,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                  ),
+                AppText(
+                  text:
+                      "Use 8 or more characters with a mix of letters, numbers & symbols.",
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.myText,
                 ),
+
                 SizedBox(height: 40),
-                
+
                 GradientButton(
                   text: ' Get started, it’s free!',
                   onPressed: () {},
                 ),
                 SizedBox(height: 80),
-                Text(
-                  "Do you have already an account?",
-                  style: TextStyle(
-                    color: AppColors.myWhite,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                  ),
+
+                AppText(
+                  text: 'Do you have already an account?',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  fontstyle: FontStyle.normal,
                 ),
                 SizedBox(height: 20),
-                // SecondaryButton(text: 'Sign Up', onPressed: () {}),
-//                 CustomButton(text: 'Sign Up', onPressed: () {}),
-                
+
                 CustomButton(text: 'Sign Up', onPressed: () {}),
               ],
             ),
@@ -119,5 +115,3 @@ class _Register2State extends State<Register2> {
     );
   }
 }
-
-
