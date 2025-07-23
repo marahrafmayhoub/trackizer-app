@@ -23,7 +23,7 @@ class StatisticsHomeCard extends StatelessWidget {
           width: 104,
           height: 68,
           decoration: BoxDecoration(
-            color: Color(0xff30303C),
+            color: Color(0xff4E4E61).withOpacity(0.2),
             borderRadius: const BorderRadius.all(
               Radius.circular(16),
             ),

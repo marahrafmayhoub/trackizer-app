@@ -77,6 +77,11 @@ flutter:
     - assets/images/Spotify Logo.png
     - assets/images/YT Premium Lgoo.png
     - assets/images/OneDrive Logo.png
+<<<<<<< HEAD
+    - assets/icons/Google.svg
+    - assets/icons/Facebook.svg
+    - assets/icons/Apple.svg
+=======
     - assets/icons/header_icons/Back.svg
     - assets/icons/icloud.svg
     - assets/icons/security.svg
@@ -108,3 +113,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+>>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d

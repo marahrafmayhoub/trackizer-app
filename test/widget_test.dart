@@ -10,7 +10,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:trackizer/my_app.dart';
 
 // ignore: depend_on_referenced_packages
+<<<<<<< HEAD
+import 'package:trackizer_ui/main.dart' hide MyApp;
+=======
 import 'package:trackizer/main.dart';
+>>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

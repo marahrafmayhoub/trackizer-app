@@ -2,6 +2,14 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+<<<<<<< HEAD
+import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer_ui/core/widgets/app_buttons/custom_button.dart';
+import 'package:trackizer_ui/core/widgets/app_text.dart';
+import 'package:trackizer_ui/core/widgets/custom_row.dart';
+import 'package:trackizer_ui/core/widgets/header.dart';
+import 'package:trackizer_ui/core/widgets/subscription_widgets/ellipse.dart';
+=======
 import 'package:trackizer/core/constants/app_colors.dart';
 import 'package:trackizer/core/widgets/app_buttons/custom_button.dart';
 import 'package:trackizer/core/widgets/app_text.dart';
@@ -9,6 +17,7 @@ import 'package:trackizer/core/widgets/custom_row.dart';
 import 'package:trackizer/core/widgets/header.dart';
 import 'package:trackizer/core/widgets/subscription_widgets/ellipse.dart';
 
+>>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
 // import 'package:trackizer/core/constants/app_colors.dart';
 // import 'package:trackizer/core/widgets/app_buttons/custom_button.dart';
 // import 'package:trackizer/core/widgets/app_text.dart';

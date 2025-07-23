@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'package:trackizer/core/constants/app_colors.dart';
 
@@ -6,30 +7,36 @@ class GradientButton extends StatelessWidget {
   final String text;
   final List<Color> gradientColors;
   final List<BoxShadow>? boxShadow;
+  final String? imagePath;
 
   final double width;
   final double height;
   final VoidCallback onPressed;
   final Color textColor;
+  final String? svgAssetPath;
+  final double? svgSize;
 
   const GradientButton({
     super.key,
+    this.imagePath,
     required this.text,
     this.gradientColors = const [Color(0xffffA726), Color(0xffFF7F37)],
     this.boxShadow,
     this.width = 324,
     this.height = 48,
-    required this.onPressed, 
-     this.textColor = AppColors.myWhite,
+    required this.onPressed,
+    this.textColor = AppColors.myWhite,
+    this.svgAssetPath,
+    this.svgSize = 16,
   });
-
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+        // padding: EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+        padding: EdgeInsets.zero,
         backgroundColor: Colors.transparent,
         minimumSize: Size(width, height),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
@@ -56,13 +63,27 @@ class GradientButton extends StatelessWidget {
           ],
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: textColor,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-            ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (svgAssetPath != null) ...[
+                SvgPicture.asset(
+                  svgAssetPath!,
+                  width: svgSize,
+                  height: svgSize,
+                ),
+                const SizedBox(width: 8),
+              ],
+              Text(
+                text,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
           ),
         ),
       ),
