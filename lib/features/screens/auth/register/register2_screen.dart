@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:trackizer_ui/core/constants/app_colors.dart';
 import 'package:trackizer_ui/core/widgets/app_buttons/custom_button.dart';
@@ -6,6 +7,13 @@ import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
 import 'package:trackizer_ui/core/widgets/app_text.dart';
 import 'package:trackizer_ui/core/widgets/labeled_text_field.dart';
 import 'package:trackizer_ui/core/widgets/main_logo.dart';
+=======
+import 'package:trackizer/core/constants/app_colors.dart';
+import 'package:trackizer/core/widgets/app_buttons/custom_button.dart';
+import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer/core/widgets/labeled_text_field.dart';
+import 'package:trackizer/core/widgets/main_logo.dart';
+>>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
 
 class Register2 extends StatefulWidget {
   const Register2({super.key});
@@ -27,7 +35,11 @@ class _Register2State extends State<Register2> {
               children: [
                 SizedBox(height: 58.h),
                 MainLogo(width: 146, height: 24),
+<<<<<<< HEAD
                 SizedBox(height: 165.h),
+=======
+                SizedBox(height: 165),
+>>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
 
                 LabeledTextField(label: "E-mail address"),
                 SizedBox(height: 16),

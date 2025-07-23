@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
-import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer/core/constants/app_colors.dart';
 
 class HalfCircleBudgetGauge extends StatelessWidget {
   final double value;
@@ -16,7 +16,7 @@ class HalfCircleBudgetGauge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200.h,
+      height: 105.h,
       child: SfRadialGauge(enableLoadingAnimation: true,
         axes: <RadialAxis>[
           RadialAxis(

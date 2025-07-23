@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 
 import 'package:trackizer_ui/core/constants/app_colors.dart';
 import 'package:trackizer_ui/core/widgets/app_buttons/custom_button.dart';
 import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
 import 'package:trackizer_ui/core/widgets/app_text.dart';
 import 'package:trackizer_ui/core/widgets/main_logo.dart';
+=======
+import 'package:trackizer/core/constants/app_colors.dart';
+import 'package:trackizer/core/widgets/app_buttons/custom_button.dart';
+import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer/core/widgets/app_text.dart';
+import 'package:trackizer/core/widgets/main_logo.dart';
+>>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
 
 class Register1 extends StatefulWidget {
   const Register1({super.key});
@@ -47,9 +55,10 @@ class _Register1ScreenState extends State<Register1> {
           SizedBox(height: 40),
           Container(
             child: Center(
-              child: Text('or', style: TextStyle(color: AppColors.myWhite)),
+              child: AppText(text: 'or', color: AppColors.myWhite),
             ),
           ),
+
           SizedBox(height: 40),
           CustomButton(text: 'Sign Up with E-mail', onPressed: () {}),
           SizedBox(height: 24),
@@ -57,9 +66,16 @@ class _Register1ScreenState extends State<Register1> {
             child: AppText(
               text:
                   "By registering, you agree to our Terms of Use. Learn how we collect, use and share your data.",
+<<<<<<< HEAD
               fontSize: 12,
               fontWeight: FontWeight.w500,
               color: AppColors.myText,
+=======
+              color: AppColors.myText,
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+              textAlign: TextAlign.center,
+>>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
             ),
           ),
         ],

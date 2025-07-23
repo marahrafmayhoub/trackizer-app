@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer/core/constants/app_colors.dart';
 
-
-class HomeCard2 extends StatelessWidget {
+class HomeCard1 extends StatelessWidget {
   final String title;
   final String price;
-  final String month;
-  final String day;
+  final String imagePath;
 
-  const HomeCard2({
+  const HomeCard1({
     super.key,
     required this.title,
     required this.price,
-    required this.month,
-    required this.day,
+    required this.imagePath,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(height: 64,alignment: Alignment.center,
-      margin: const EdgeInsets.symmetric(horizontal: 24,),
+    return Container(
+      height: 64,
+      alignment: Alignment.center,
+      margin: const EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.mybordercolor),
         borderRadius: const BorderRadius.all(Radius.circular(16)),
       ),
       child: ListTile(
-        
         leading: Container(
           height: 40,
           width: 40,
@@ -33,26 +31,10 @@ class HomeCard2 extends StatelessWidget {
             color: AppColors.mybordercolor,
             borderRadius: const BorderRadius.all(Radius.circular(12)),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                month,
-                style: const TextStyle(
-                  color: Color(0xffA3A2B5),
-                  fontSize: 10,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              Text(
-                day,
-                style: const TextStyle(
-                  color: Color(0xffA3A2B5),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14,
-                ),
-              ),
-            ],
+          clipBehavior: Clip.hardEdge,
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
           ),
         ),
         title: Text(

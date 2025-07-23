@@ -4,21 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
-import 'package:trackizer_ui/core/constants/app_colors.dart';
-import 'package:trackizer_ui/core/widgets/home_card_1.dart';
-import 'package:trackizer_ui/core/widgets/home_card_2.dart';
-import 'package:trackizer_ui/core/widgets/main_logo.dart';
-import 'package:trackizer_ui/core/widgets/statistics_home_card.dart';
+import 'package:trackizer/core/constants/app_colors.dart';
+import 'package:trackizer/core/widgets/bottomNavbar.dart';
+import 'package:trackizer/core/widgets/home_widgets/home_card_1.dart';
+import 'package:trackizer/core/widgets/home_widgets/home_card_2.dart';
+import 'package:trackizer/core/widgets/main_logo.dart';
+import 'package:trackizer/core/widgets/home_widgets/statistics_home_card.dart';
 
 class Home2 extends StatefulWidget {
   const Home2({super.key});
 
   @override
-  State<Home2> createState() => _Home2State();
+  State<Home2> createState() => _Home2State(); 
 }
 
 class _Home2State extends State<Home2> with SingleTickerProviderStateMixin {
   double _gaugeValue = 75;
+    int currentIndex = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -234,12 +237,18 @@ class _Home2State extends State<Home2> with SingleTickerProviderStateMixin {
                       Tab(text: 'Upcoming bills'),
                     ],
                   ),
+<<<<<<< HEAD
                 ),
 
                 const SizedBox(height: 16),
 
                 Expanded(
                   child: TabBarView(
+=======
+                  SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+>>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
                     children: [
                       ListView(
                         padding: EdgeInsets.zero,
@@ -300,6 +309,18 @@ class _Home2State extends State<Home2> with SingleTickerProviderStateMixin {
             ),
           ],
         ),
+
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: NavBar(
+          currentIndex: currentIndex,
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+        ),
+      ),
       ),
     );
   }

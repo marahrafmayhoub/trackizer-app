@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer_ui/core/widgets/app_text.dart';
+import 'package:trackizer/core/widgets/app_text.dart';
 
 class CustomRow extends StatelessWidget {
   final String label;
