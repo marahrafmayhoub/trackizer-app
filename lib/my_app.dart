@@ -1,27 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:trackizer/features/screens/auth/welcome_screen.dart';
-import 'package:trackizer/features/screens/settings/settings_screen.dart';
-import 'package:trackizer/features/screens/subscriptions/add_subscription_screen.dart';
-// import 'package:trackizer/features/screens/subscriptions/add_subscription_screen.dart';
-
-import 'package:trackizer_ui/features/screens/auth/login/login_screen.dart';
-import 'package:trackizer_ui/features/screens/auth/register/register1_screen.dart';
-import 'package:trackizer_ui/features/screens/auth/register/register2_screen.dart';
-import 'package:trackizer_ui/features/screens/auth/welcome_screen.dart';
-import 'package:trackizer_ui/features/screens/budget/spending_screen.dart';
-// import 'package:trackizer/features/screens/auth/register/register1_screen.dart';
-// import 'package:trackizer/features/screens/auth/register/register2_screen.dart';
-// import 'package:trackizer/features/screens/auth/welcome_screen.dart';
-// import 'package:trackizer/features/screens/auth/welcome_screen.dart';
-// import 'package:trackizer/features/screens/cards/credit_cards_screen.dart';
-// import 'package:trackizer/features/screens/subscriptions/subscription_info_screen.dart';
-import 'package:trackizer_ui/features/screens/calendar/calendar_screen.dart';
-import 'package:trackizer_ui/features/screens/cards/credit_cards_screen.dart';
-import 'package:trackizer_ui/features/screens/subscriptions/add_subscription_screen.dart';
-import 'package:trackizer_ui/features/screens/subscriptions/subscription_info_screen.dart';
-// import 'package:trackizer/features/screens/subscriptions/add_subscription_screen.dart';
-import 'package:trackizer_ui/features/screens/home/home_upcoming_screen.dart';
+import 'package:trackizer/features/screens/home/home_upcoming_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -29,18 +8,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: Size(390, 844), // تأكد من أنها نفس حجم تصميمك (Figma أو XD)
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp(
-        title: 'Trackizer',
-        theme: ThemeData(
-          fontFamily: 'Inter',
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        ),
-        debugShowCheckedModeBanner: false,
-        home: SettingsScreen(),
-      ),
+      builder: (_, child) {
+        return MaterialApp(
+          title: 'Trackizer',
+          theme: ThemeData(
+            fontFamily: 'Inter',
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          ),
+          debugShowCheckedModeBanner: false,
+          home: Home2(),
+        );
+      },
     );
   }
 }
