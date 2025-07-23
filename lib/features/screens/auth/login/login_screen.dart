@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:trackizer_ui/core/constants/app_colors.dart';
-import 'package:trackizer_ui/core/widgets/app_buttons/custom_button.dart';
-import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
-import 'package:trackizer_ui/core/widgets/app_text.dart';
-import 'package:trackizer_ui/core/widgets/labeled_text_field.dart';
-import 'package:trackizer_ui/core/widgets/main_logo.dart';
+import 'package:trackizer/core/constants/app_colors.dart';
+import 'package:trackizer/core/widgets/app_buttons/custom_button.dart';
+import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer/core/widgets/app_text.dart';
+import 'package:trackizer/core/widgets/labeled_text_field.dart';
+import 'package:trackizer/core/widgets/main_logo.dart';
 
 ///  شاشة تسجيل الدخول
 class LoginScreen extends StatefulWidget {

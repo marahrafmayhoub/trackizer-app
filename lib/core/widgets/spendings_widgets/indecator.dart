@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
-import 'package:trackizer_ui/core/constants/app_colors.dart';
+import 'package:trackizer/core/constants/app_colors.dart';
 
 class HalfCircleBudgetGauge extends StatelessWidget {
   final double value;

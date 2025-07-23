@@ -23,7 +23,6 @@ class BudgetCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double remaining = total - spent;
     return Container(
-      height: 85.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: const Color(0xff4E4E61).withOpacity(0.2),

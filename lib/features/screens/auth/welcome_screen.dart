@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:trackizer_ui/core/constants/app_colors.dart';
-import 'package:trackizer_ui/core/widgets/app_buttons/custom_button.dart';
-import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
-import 'package:trackizer_ui/core/widgets/app_text.dart';
-import 'package:trackizer_ui/core/widgets/main_logo.dart';
-import 'package:trackizer_ui/core/widgets/welcome_screen_widgets/bubble.dart';
+import 'package:trackizer/core/constants/app_colors.dart';
+import 'package:trackizer/core/widgets/app_buttons/custom_button.dart';
+import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer/core/widgets/app_text.dart';
+import 'package:trackizer/core/widgets/main_logo.dart';
+import 'package:trackizer/core/widgets/welcome_screen_widgets/bubble.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -80,6 +80,9 @@ class WelcomeScreen extends StatelessWidget {
                       textColor: AppColors.myWhite,
                     ),
                     SizedBox(height: 16.h),
+                    GradientButton(text: 'Get started', onPressed: () {}, textColor: AppColors.myWhite,),
+
+                    SizedBox(height: 16.h,),
                     CustomButton(text: 'I have an account', onPressed: () {}),
                     SizedBox(height: 30.h),
                   ],
