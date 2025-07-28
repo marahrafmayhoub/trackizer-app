@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -7,6 +9,7 @@ import 'package:trackizer/core/widgets/bottomNavbar.dart';
 import 'package:trackizer/core/widgets/custom_column.dart';
 import 'package:trackizer/core/widgets/header.dart';
 import 'package:trackizer/core/widgets/subscription_widgets/sbscriprionModel.dart';
+
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen({super.key});
@@ -28,7 +31,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
         child: Column(
           children: [
             Container(
-              height: 386.h,
               decoration: BoxDecoration(
                 color: Color(0xff353542),
                 borderRadius: BorderRadius.only(
@@ -55,7 +57,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
                       padding: const EdgeInsets.only(
                         left: 24,
                         top: 43,
-                        // right: 24,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,29 +120,42 @@ class _CalendarScreenState extends State<CalendarScreen> {
                           ),
                           SizedBox(height: 30.h),
                           Container(
-                            height: 103,
+                            height: 103.h,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: 7,
                               itemBuilder: (context, index) {
-                                return Padding(
-                                  padding: const EdgeInsets.only(right: 8),
-                                  child: Container(
-                                    width: 48.w,
-                                    height: 103.h,
-                                    decoration: BoxDecoration(
-                                      color: index == 0
-                                          ? Color(0xff4E4E61)
-                                          : Color(0xff4E4E61).withOpacity(0.2),
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8),
-                                      child: InfoColumn(
-                                        title: dates[index],
-                                        subtitle: days[index],
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                return GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      currentIndex = index;
+                                    });
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 8),
+                                    child: Container(
+                                      width: 48.w,
+                                      height: 103.h,
+                                      decoration: BoxDecoration(
+                                        color: index == currentIndex
+                                            ? Color(0xff4E4E61)
+                                            : Color(
+                                                0xff4E4E61,
+                                              ).withOpacity(0.2),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8),
+                                        child: InfoColumn(
+                                          title: dates[index],
+                                          subtitle: days[index],
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          showDot:
+                                              index ==
+                                              currentIndex, 
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -149,6 +163,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                               },
                             ),
                           ),
+                          SizedBox(height: 32),
                         ],
                       ),
                     ),
@@ -167,7 +182,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 ],
               ),
             ),
-            Expanded(
+            SizedBox(
+              height: 252.h,
               child: GridView.builder(
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 shrinkWrap: true,
@@ -184,8 +200,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                       borderRadius: BorderRadius.circular(16),
                       color: Color(0xff353542),
                     ),
-                    width: 160,
-                    height: 168,
+                    width: 160.w,
+                    height: 168.h,
                     child: Padding(
                       padding: const EdgeInsets.all(16),
                       child: Column(
@@ -213,17 +229,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
           ],
         ),
       ),
-     bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: NavBar(
-          currentIndex: currentIndex,
-          onTap: (index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
-        ),
-      ),
+     
     );
   }
 }

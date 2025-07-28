@@ -35,6 +35,7 @@ class LabeledTextField extends StatelessWidget {
           controller: controller,
           obscureText: obscureText,
           keyboardType: keyboardType,
+          style: TextStyle(color: AppColors.myWhite),
           decoration: InputDecoration(
             hintText: hintText,
             border: OutlineInputBorder(

@@ -55,7 +55,9 @@ class HeaderIcon extends StatelessWidget {
       child: Padding(
         padding: padding,
         child: GestureDetector(
-          onTap: onTap,
+          onTap: (){
+            Navigator.pop(context);
+          },
           child: SvgPicture.asset(assetPath),
         ),
       ),

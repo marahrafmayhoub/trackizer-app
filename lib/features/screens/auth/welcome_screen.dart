@@ -7,6 +7,8 @@ import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
 import 'package:trackizer/core/widgets/app_text.dart';
 import 'package:trackizer/core/widgets/main_logo.dart';
 import 'package:trackizer/core/widgets/welcome_screen_widgets/bubble.dart';
+import 'package:trackizer/features/screens/auth/login/login_screen.dart';
+import 'package:trackizer/features/screens/auth/register/register1_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -76,17 +78,17 @@ class WelcomeScreen extends StatelessWidget {
                     SizedBox(height: 60.h),
                     GradientButton(
                       text: 'Get started',
-                      onPressed: () {},
+                      onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Register1()));
+
+                      },
                       textColor: AppColors.myWhite,
                     ),
                     SizedBox(height: 16.h),
-                    GradientButton(text: 'Get started', onPressed: () {}, textColor: AppColors.myWhite,),
-<<<<<<< HEAD
-=======
+                    CustomButton(text: 'I have an account', onPressed: () {
+                                            Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
 
->>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
-                    SizedBox(height: 16.h,),
-                    CustomButton(text: 'I have an account', onPressed: () {}),
+                    }),
                     SizedBox(height: 30.h),
                   ],
                 ),

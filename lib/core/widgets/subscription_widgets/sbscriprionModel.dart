@@ -26,17 +26,5 @@ List<SubscriptionModel> subscriptions = [
     name: 'YouTube Premium',
     iconPath: 'assets/icons/cloud.svg',
     price: '18.99',
-  ), SubscriptionModel(
-    name: 'YouTube Premium',
-    iconPath: 'assets/icons/cloud.svg',
-    price: '18.99',
-  ), SubscriptionModel(
-    name: 'YouTube Premium',
-    iconPath: 'assets/icons/cloud.svg',
-    price: '18.99',
-  ), SubscriptionModel(
-    name: 'YouTube Premium',
-    iconPath: 'assets/icons/cloud.svg',
-    price: '18.99',
-  ),
+  )
 ];

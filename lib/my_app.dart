@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:trackizer/features/screens/auth/login/login_screen.dart';
+import 'package:trackizer/features/screens/auth/welcome_screen.dart';
+import 'package:trackizer/features/screens/calendar/calendar_screen.dart';
+import 'package:trackizer/features/screens/cards/credit_cards_screen.dart';
 import 'package:trackizer/features/screens/home/home_upcoming_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -8,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(390, 844), // تأكد من أنها نفس حجم تصميمك (Figma أو XD)
+      designSize: Size(390, 844), 
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
@@ -19,7 +23,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           ),
           debugShowCheckedModeBanner: false,
-          home: Home2(),
+          home: WelcomeScreen(),
         );
       },
     );
