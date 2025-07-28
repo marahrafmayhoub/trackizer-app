@@ -7,6 +7,8 @@ import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
 import 'package:trackizer/core/widgets/app_text.dart';
 import 'package:trackizer/core/widgets/labeled_text_field.dart';
 import 'package:trackizer/core/widgets/main_logo.dart';
+import 'package:trackizer/features/screens/auth/register/register1_screen.dart';
+import 'package:trackizer/features/screens/home/home_upcoming_screen.dart';
 
 ///  شاشة تسجيل الدخول
 class LoginScreen extends StatefulWidget {
@@ -50,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     LabeledTextField(
                       label: 'Login',
-                      controller: emailController,
+                      controller: emailController
                     ),
                     SizedBox(height: 16.h),
                     LabeledTextField(
@@ -105,7 +107,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                     SizedBox(height: 24.h),
-                    GradientButton(text: 'Sign In', onPressed: handleLogin),
+                    GradientButton(text: 'Sign In', onPressed: (){
+                                            Navigator.push(context, MaterialPageRoute(builder: (context)=> Home2()));
+
+                    }),
                     SizedBox(height: 152.h),
                     AppText(
                       text: "If you don't have an account yet?",
@@ -113,7 +118,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.w400,
                     ),
                     SizedBox(height: 20.h),
-                    CustomButton(text: 'Sign Up', onPressed: () {}),
+                    CustomButton(text: 'Sign Up', onPressed: () {
+                                            Navigator.push(context, MaterialPageRoute(builder: (context)=> Register1()));
+
+                    }),
                   ],
                 ),
               ),

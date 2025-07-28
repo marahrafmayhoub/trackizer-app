@@ -11,6 +11,7 @@ class InfoColumn extends StatelessWidget {
   final Color? subtitleColor;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
+  final bool showDot;
 
   const InfoColumn({
     super.key,
@@ -21,6 +22,7 @@ class InfoColumn extends StatelessWidget {
     this.subtitleColor,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.start,
+    this.showDot = false,
   });
 
   @override
@@ -29,12 +31,32 @@ class InfoColumn extends StatelessWidget {
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
       children: [
-        AppText(text: title, fontSize: titleFontSize,fontWeight: FontWeight.w700,),
-        AppText(
-          text: subtitle,fontWeight: FontWeight.w500,
-          fontSize: subtitleFontSize,
-          color: subtitleColor ?? AppColors.myText,
+        Column(
+          children: [
+            AppText(
+              text: title,
+              fontSize: titleFontSize,
+              fontWeight: FontWeight.w700,
+            ),
+            AppText(
+              text: subtitle,
+              fontWeight: FontWeight.w500,
+              fontSize: subtitleFontSize,
+              color: subtitleColor ?? AppColors.myText,
+            ),
+          ],
         ),
+
+        // if (showDot) SizedBox(height: 27), // مسافة بسيطة
+        if (showDot)
+          Container(
+            width: 6,
+            height: 6,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Color(0xFFFF9900), // اللون البرتقالي
+            ),
+          ),
       ],
     );
   }

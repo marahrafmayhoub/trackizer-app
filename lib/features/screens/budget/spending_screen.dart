@@ -11,6 +11,9 @@ import 'package:trackizer/core/widgets/dottedBorder.dart';
 import 'package:trackizer/core/widgets/header.dart';
 import 'package:trackizer/core/widgets/spendings_widgets/budget_Item.dart';
 import 'package:trackizer/core/widgets/spendings_widgets/indecator.dart';
+import 'package:trackizer/features/screens/calendar/calendar_screen.dart';
+import 'package:trackizer/features/screens/cards/credit_cards_screen.dart';
+import 'package:trackizer/features/screens/home/home_upcoming_screen.dart';
 
 class BudgetsPage extends StatefulWidget {
   const BudgetsPage({super.key});
@@ -20,7 +23,7 @@ class BudgetsPage extends StatefulWidget {
 }
 
 class _BudgetsPageState extends State<BudgetsPage> {
-  int currentIndex = 0;
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,17 +103,7 @@ class _BudgetsPageState extends State<BudgetsPage> {
           ),
         ),
       ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: NavBar(
-          currentIndex: currentIndex,
-          onTap: (index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
-        ),
-      ),
+   
     );
   }
 }

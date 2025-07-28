@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:trackizer_ui/core/constants/app_colors.dart';
-import 'package:trackizer_ui/core/widgets/app_buttons/gradient_button.dart';
-import 'package:trackizer_ui/core/widgets/header.dart';
-// import 'package:trackizer_ui/screens/login_screen.dart' hide AppColors;
-=======
+import 'package:trackizer/core/constants/app_colors.dart';
+import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
+import 'package:trackizer/core/widgets/header.dart';
+// import 'package:trackizer/screens/login_screen.dart' hide AppColors;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:trackizer/core/constants/app_colors.dart';
 import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
@@ -12,7 +10,7 @@ import 'package:trackizer/core/widgets/app_text.dart';
 import 'package:trackizer/core/widgets/header.dart';
 import 'package:trackizer/core/widgets/subscription_widgets/price_section.dart';
 import 'package:trackizer/core/widgets/subscription_widgets/subscription_selector.dart';
->>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
+import 'package:trackizer/features/screens/subscriptions/subscription_info_screen.dart';
 
 class AddSubscriptionScreen extends StatefulWidget {
   const AddSubscriptionScreen({super.key});
@@ -141,27 +139,12 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
 
               const SizedBox(height: 32),
 
-<<<<<<< HEAD
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: GradientButton(
-                    text: "Add this platform",
-                    onPressed: () {
-                      print(
-                        'Added: ${descriptionController.text} | $monthlyPrice SP',
-                      );
-                    }, textColor: AppColors.myWhite,
-                    
-                  ),
-                ),
-              ),
-
+              
               const SizedBox(height: 32),
-=======
-              GradientButton(text: "Add this platform", onPressed: () {}),
->>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
+              GradientButton(text: "Add this platform", onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> SubscriptionInfoScreen()));
+
+              }),
             ],
           ),
         ),

@@ -2,30 +2,23 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-<<<<<<< HEAD
-import 'package:trackizer_ui/core/constants/app_colors.dart';
-import 'package:trackizer_ui/core/widgets/app_text.dart';
-import 'package:trackizer_ui/core/widgets/credit_cards_widgets/circle_card.dart';
-import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_card.dart';
-import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_icons.dart';
-import 'package:trackizer_ui/core/widgets/header.dart';
-
-import 'package:trackizer_ui/core/widgets/credit_cards_widgets/custom_icons.dart'
-    show CustomIcon;
-import 'package:trackizer_ui/core/widgets/header.dart';
-=======
 import 'package:trackizer/core/constants/app_colors.dart';
 import 'package:trackizer/core/widgets/app_text.dart';
 import 'package:trackizer/core/widgets/bottomNavbar.dart';
 import 'package:trackizer/core/widgets/credit_cards_widgets/circle_card.dart';
 import 'package:trackizer/core/widgets/credit_cards_widgets/custom_card.dart';
 import 'package:trackizer/core/widgets/credit_cards_widgets/custom_icons.dart';
-import 'package:trackizer/core/widgets/dottedBorder.dart';
 import 'package:trackizer/core/widgets/header.dart';
 
 import 'package:trackizer/core/widgets/credit_cards_widgets/custom_icons.dart'
     show CustomIcon;
->>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
+
+import 'package:trackizer/core/widgets/credit_cards_widgets/custom_icons.dart';
+import 'package:trackizer/core/widgets/dottedBorder.dart';
+
+import 'package:trackizer/core/widgets/credit_cards_widgets/custom_icons.dart'
+    show CustomIcon;
+import 'package:trackizer/features/screens/subscriptions/add_subscription_screen.dart';
 
 class CreditCardsScreen extends StatefulWidget {
   const CreditCardsScreen({super.key});
@@ -35,7 +28,6 @@ class CreditCardsScreen extends StatefulWidget {
 }
 
 class _CreditCardsScreenState extends State<CreditCardsScreen> {
-  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,17 +37,7 @@ class _CreditCardsScreenState extends State<CreditCardsScreen> {
           children: [
             Column(
               children: [
-<<<<<<< HEAD
-                HeaderWithIcons(
-                  text: 'Credit Cards',
-                  icons: [
-                    HeaderIcon(
-                      assetPath: 'assets/icons/Settings.svg',
-                      alignment: Alignment.topRight,
-                      padding: EdgeInsets.only(right: 23),
-                    ),
-                  ],
-=======
+
                 Padding(
                   padding: const EdgeInsets.only(top: 32),
                   child: HeaderWithIcons(
@@ -68,7 +50,6 @@ class _CreditCardsScreenState extends State<CreditCardsScreen> {
                       ),
                     ],
                   ),
->>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
                 ),
                 SizedBox(height: 43),
                 Stack(
@@ -152,14 +133,9 @@ class _CreditCardsScreenState extends State<CreditCardsScreen> {
                     ),
                   ],
                 ),
-
-<<<<<<< HEAD
                 SizedBox(height: 24),
                 AppText(text: 'Subscriptions', fontSize: 16,fontWeight: FontWeight.w600,),
-=======
-                SizedBox(height: 51),
-                AppText(text: 'Subscriptions', fontSize: 16),
->>>>>>> a364b91a339b36b294d86f6474a0683aff63b10d
+
                 SizedBox(height: 16),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 95),
@@ -192,27 +168,22 @@ class _CreditCardsScreenState extends State<CreditCardsScreen> {
                     topRight: Radius.circular(24),
                   ),
                 ),
-                child: Center(
-                  child: AddCardButton(
-                    text: 'Add new card',
-                    onTap: () {},
-                    width: 328.w,
-                    height: 52.h,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 24),
+                  child: Align(alignment: Alignment.topCenter,
+                    child: AddCardButton(
+                      text: 'Add new card',
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> AddSubscriptionScreen()));
+                      },
+                      width: 328.w,
+                    ),
                   ),
                 ),
               ),
             ),
 
-            // Align(alignment: Alignment.bottomCenter,
-            //   child: NavBar(
-            //     currentIndex: currentIndex,
-            //     onTap: (index) {
-            //       setState(() {
-            //         currentIndex = index;
-            //       });
-            //     },
-            //   ),
-            // ),
+         
           ],
         ),
       ),
