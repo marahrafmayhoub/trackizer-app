@@ -6,8 +6,13 @@ import 'package:trackizer/core/widgets/app_text.dart';
 
 class SubscriptionSelector extends StatefulWidget {
   final PageController controller;
+  final void Function(int)? onItemChanged;
 
-  const SubscriptionSelector({super.key, required this.controller});
+  const SubscriptionSelector({
+    super.key,
+    required this.controller,
+    this.onItemChanged,
+  });
 
   @override
   State<SubscriptionSelector> createState() => _SubscriptionSelectorState();
@@ -24,42 +29,39 @@ class _SubscriptionSelectorState extends State<SubscriptionSelector> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: PageView.builder(
-        controller: widget.controller,
-        itemCount: subscriptions.length,
-        itemBuilder: (context, index) {
-          return AnimatedBuilder(
-            animation: widget.controller,
-            builder: (context, child) {
-              double value = 1.0;
-              if (widget.controller.hasClients &&
-                  widget.controller.page != null) {
-                value = widget.controller.page! - index;
-                value = (1 - (value.abs() * 0.5)).clamp(0.5, 1.0);
-              }
+    return PageView.builder(
+      controller: widget.controller,
+      itemCount: subscriptions.length,
+      onPageChanged: widget.onItemChanged,
+      itemBuilder: (context, index) {
+        return AnimatedBuilder(
+          animation: widget.controller,
+          builder: (context, child) {
+            double value = 1.0;
+            if (widget.controller.hasClients &&
+                widget.controller.page != null) {
+              value = widget.controller.page! - index;
+              value = (1 - (value.abs() * 0.5)).clamp(0.5, 1.0);
+            } else {
+              value = 1.0;
+            }
 
-              final item = subscriptions[index];
+            final item = subscriptions[index];
 
-              return Transform.scale(
-                scale: value,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(
-                      item.imagePath,
-                      width: 161.w,
-                      height: 161.w,
-                    ),
-                    SizedBox(height: 23.h),
-                    AppText(text: item.name),
-                  ],
-                ),
-              );
-            },
-          );
-        },
-      ),
+            return Transform.scale(
+              scale: value,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(item.imagePath, width: 161.w, height: 161.w),
+                  SizedBox(height: 23.h),
+                  AppText(text: item.name, fontstyle: FontStyle.normal),
+                ],
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }

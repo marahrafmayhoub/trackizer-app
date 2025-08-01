@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:trackizer/core/constants/app_colors.dart';
 
 class HomeCard1 extends StatelessWidget {
@@ -15,6 +16,8 @@ class HomeCard1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isSvg = imagePath.toLowerCase().endsWith('.svg');
+
     return Container(
       height: 64,
       alignment: Alignment.center,
@@ -32,10 +35,17 @@ class HomeCard1 extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(12)),
           ),
           clipBehavior: Clip.hardEdge,
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-          ),
+          // child: Image.asset(
+          //   imagePath,
+          //   fit: BoxFit.cover,
+          // ),
+          child: isSvg
+              ? SvgPicture.network(
+                  imagePath,
+                  placeholderBuilder: (context) =>
+                      const CircularProgressIndicator(),
+                )
+              : Image.network(imagePath, fit: BoxFit.cover),
         ),
         title: Text(
           title,
