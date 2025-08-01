@@ -25,6 +25,7 @@ dependencies:
   animated_bottom_navigation_bar: ^1.4.0
   dio: ^5.8.0+1
   http: ^1.4.0
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:

@@ -1,14 +1,45 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:trackizer/core/API/api_call.dart';
 import 'package:trackizer/core/constants/app_colors.dart';
-import 'package:trackizer/core/widgets/app_buttons/custom_button.dart';
 import 'package:trackizer/core/widgets/app_text.dart';
 import 'package:trackizer/core/widgets/header.dart';
 import 'package:trackizer/core/widgets/settings_widgets/setting_card.dart';
 import 'package:trackizer/core/widgets/settings_widgets/setting_row.dart';
 
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
+class SettingsScreen extends StatefulWidget {
+  SettingsScreen({super.key});
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  List<Map<String, dynamic>> profileData = [];
+
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  Future<void> fetchData() async {
+    try {
+      final data = await ApiService.fetchProfileData();
+      setState(() {
+        profileData = data;
+        isLoading = false;
+      });
+    } catch (e) {
+      setState(() => isLoading = false);
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(e.toString())));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,23 +65,36 @@ class SettingsScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              const CircleAvatar(
-                radius: 40,
-                backgroundImage: AssetImage("assets/images/Avatar.png"),
-              ),
-              const SizedBox(height: 8),
-              AppText(
-                text: "John Doe",
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
-              // const SizedBox(height: 4),
-              AppText(
-                text: "j.doe@gmail.com",
-                color: AppColors.myHeaderText,
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500,
-              ),
+              isLoading
+                  ? const CircularProgressIndicator()
+                  : Column(
+                      children: profileData.map((profile) {
+                        return Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 40,
+                              backgroundImage: profile['image_url'] != null
+                                  ? NetworkImage(profile['image_url'])
+                                  : const AssetImage("assets/images/Avatar.png")
+                                        as ImageProvider,
+                            ),
+                            const SizedBox(height: 8),
+                            AppText(
+                              text: profile['name'] ?? 'No name',
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            AppText(
+                              text: profile['number'] ?? 'Not Found !!',
+                              color: AppColors.myHeaderText,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {},

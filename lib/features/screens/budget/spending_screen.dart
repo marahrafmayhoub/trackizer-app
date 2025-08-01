@@ -1,29 +1,47 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:syncfusion_flutter_gauges/gauges.dart';
+import 'package:trackizer/core/API/api_call.dart';
 import 'package:trackizer/core/constants/app_colors.dart';
 import 'package:trackizer/core/widgets/app_text.dart';
-import 'package:trackizer/core/widgets/bottomNavbar.dart';
 import 'package:trackizer/core/widgets/dottedBorder.dart';
 import 'package:trackizer/core/widgets/header.dart';
 import 'package:trackizer/core/widgets/spendings_widgets/budget_Item.dart';
 import 'package:trackizer/core/widgets/spendings_widgets/indecator.dart';
-import 'package:trackizer/features/screens/calendar/calendar_screen.dart';
-import 'package:trackizer/features/screens/cards/credit_cards_screen.dart';
-import 'package:trackizer/features/screens/home/home_upcoming_screen.dart';
 
 class BudgetsPage extends StatefulWidget {
   const BudgetsPage({super.key});
-
   @override
   State<BudgetsPage> createState() => _BudgetsPageState();
 }
 
 class _BudgetsPageState extends State<BudgetsPage> {
- 
+  List<Map<String, dynamic>> spendingCategories = [];
+  @override
+  void initState() {
+    super.initState();
+    fetchCategories();
+  }
+
+  bool isLoaded = false;
+
+  Future<void> fetchCategories() async {
+    try {
+      final categories = await ApiService.getSpendingCategories();
+      setState(() {
+        spendingCategories = categories;
+        isLoaded = false;
+      });
+      
+    } catch (e) {
+      setState(() {
+        isLoaded = false;
+      });
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('حدث خطأ: ${e.toString()}')));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +50,7 @@ class _BudgetsPageState extends State<BudgetsPage> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: SingleChildScrollView(
           child: Column(
-
             children: [
-
               Padding(
                 padding: const EdgeInsets.only(top: 32),
                 child: HeaderWithIcons(
@@ -42,7 +58,8 @@ class _BudgetsPageState extends State<BudgetsPage> {
                   icons: [
                     HeaderIcon(
                       assetPath: 'assets/icons/Settings.svg',
-                      alignment: Alignment.topRight, padding: EdgeInsets.only(right: 24),
+                      alignment: Alignment.topRight,
+                      padding: EdgeInsets.only(right: 24),
                     ),
                   ],
                 ),
@@ -66,44 +83,69 @@ class _BudgetsPageState extends State<BudgetsPage> {
                 ),
               ),
               SizedBox(height: 16.h),
-              BudgetCategoryCard(
-                title: 'Auto & Transport',
-                spent: 25.99,
-                total: 400,
-                subtitle: 'subtinb mn mntle',
-                icon: Icons.directions_car,
-                progressColor: AppColors.myGreen,
-              ),
-              SizedBox(height: 8.h),
-              BudgetCategoryCard(
-                title: 'Entertainment',
-                spent: 50.99,
-                total: 600,
-                subtitle: 'scccccccccccccubtinb mn mntle',
-                icon: Icons.movie_filter,
-                progressColor: AppColors.myOrange,
-              ),
-              SizedBox(height: 8.h),
-              BudgetCategoryCard(
-                title: 'Security',
-                spent: 5.99,
-                total: 600,
-                subtitle: 'subtinb mn mntle',
-                icon: Icons.fingerprint,
-                progressColor: AppColors.myPurple,
-              ),
+              isLoaded
+                  ? const CircularProgressIndicator()
+                  : spendingCategories.isEmpty
+                  ? const Text('لا توجد بيانات')
+                  : ListView.builder(
+                      itemCount: spendingCategories.length,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        final category = spendingCategories[index];
+                        final spent = category['spent']?.toDouble() ?? 0.0;
+                        final total =
+                            category['limit_amount']?.toDouble() ?? 1.0;
+
+                        return Padding(
+                          padding: EdgeInsets.only(bottom: 8.h),
+                          child: BudgetCategoryCard(
+                            title: category['name'] ?? 'Unnamed',
+                            spent: spent,
+                            total: total,
+                            subtitle: 'Auto generated category',
+                            icon: _getIconForCategory(category['name']),
+                            progressColor: _getColorForIndex(index),
+                          ),
+                        );
+                      },
+                    ),
+
               SizedBox(height: 8.h),
               AddCardButton(
                 text: 'Add new category',
                 onTap: () {},
                 textPadding: EdgeInsets.symmetric(vertical: 30),
-                height: 84.h,width: 328.w,
+                height: 84.h,
+                width: 328.w,
               ),
             ],
           ),
         ),
       ),
-   
     );
   }
+}
+
+IconData _getIconForCategory(String? name) {
+  switch (name?.toLowerCase()) {
+    case 'auto & transport':
+      return Icons.directions_car;
+    case 'entertainment':
+      return Icons.movie_filter;
+    case 'security':
+      return Icons.security;
+    default:
+      return Icons.category;
+  }
+}
+
+Color _getColorForIndex(int index) {
+  final colors = [
+    AppColors.myGreen,
+    AppColors.myOrange,
+    AppColors.myPurple,
+    Colors.blue,
+  ];
+  return colors[index % colors.length];
 }
