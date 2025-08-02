@@ -20,10 +20,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   bool isLoading = true;
 
+
   @override
   void initState() {
     super.initState();
     fetchData();
+  }
+
+    void navy(){
+    Navigator.pop(context);
   }
 
   Future<void> fetchData() async {
@@ -60,6 +65,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       assetPath: 'assets/icons/header_icons/Back.svg',
                       alignment: Alignment.topLeft,
                       padding: EdgeInsets.only(left: 24),
+                      onTap: navy,
                     ),
                   ],
                 ),

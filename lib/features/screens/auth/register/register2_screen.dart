@@ -139,6 +139,8 @@ class _Register2State extends State<Register2> {
                       );
                     },
                   ),
+                                      SizedBox(height: 30.h),
+
                 ],
               ),
             ),

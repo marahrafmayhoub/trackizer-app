@@ -18,6 +18,7 @@ import 'package:trackizer/core/widgets/dottedBorder.dart';
 
 import 'package:trackizer/core/widgets/credit_cards_widgets/custom_icons.dart'
     show CustomIcon;
+import 'package:trackizer/features/screens/settings/settings_screen.dart';
 import 'package:trackizer/features/screens/subscriptions/add_subscription_screen.dart';
 
 class CreditCardsScreen extends StatefulWidget {
@@ -28,6 +29,9 @@ class CreditCardsScreen extends StatefulWidget {
 }
 
 class _CreditCardsScreenState extends State<CreditCardsScreen> {
+    void navy(){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +51,7 @@ class _CreditCardsScreenState extends State<CreditCardsScreen> {
                         assetPath: 'assets/icons/Settings.svg',
                         alignment: Alignment.topRight,
                         padding: EdgeInsets.only(right: 23),
+                        onTap: navy,
                       ),
                     ],
                   ),
