@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:trackizer/core/widgets/subscription_widgets/subs_data.dart';
-
-// import 'package:trackizer_ui/screens/login_screen.dart' hide AppColors;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:trackizer/core/constants/app_colors.dart';
 import 'package:trackizer/core/widgets/app_buttons/gradient_button.dart';
@@ -11,6 +9,7 @@ import 'package:trackizer/core/widgets/app_text.dart';
 import 'package:trackizer/core/widgets/header.dart';
 import 'package:trackizer/core/widgets/subscription_widgets/price_section.dart';
 import 'package:trackizer/core/widgets/subscription_widgets/subscription_selector.dart';
+import 'package:trackizer/features/screens/subscriptions/subscription_info_screen.dart';
 
 class AddSubscriptionScreen extends StatefulWidget {
   const AddSubscriptionScreen({super.key});
@@ -23,52 +22,8 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
   double monthlyPrice = 5.99;
   int selectedIndex = 1;
 
-  Future<void> submitSubscription() async {
-    final url = Uri.parse(
-      'https://ftcbwmmsnykncncsyrfs.supabase.co/rest/v1/user_subscriptions',
-    );
-
-    final selectedItem = subscriptions[selectedIndex]; 
-
-    final Map<String, dynamic> data = {
-      "name": selectedItem.name,
-      "price": monthlyPrice,
-      "description": descriptionController.text,
-      "image": selectedItem.imagePath,
-    };
-
-    try {
-      final response = await http.post(
-        url,
-        headers: {
-          'Authorization':
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y2J3bW1zbnlrbmNuY3N5cmZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMzNjYzMjMsImV4cCI6MjA2ODk0MjMyM30.6p3lvgHZNRpgKTroIxA5TH_CPe3QsnihRqpqV_f__kw',
-          'apikey':
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y2J3bW1zbnlrbmNuY3N5cmZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMzNjYzMjMsImV4cCI6MjA2ODk0MjMyM30.6p3lvgHZNRpgKTroIxA5TH_CPe3QsnihRqpqV_f__kw',
-          'Content-Type': 'application/json',
-          'Prefer': 'return=representation',
-        },
-        body: jsonEncode(data),
-      );
-
-      if (response.statusCode == 201 || response.statusCode == 200) {
-        print("Subscription added successfully");
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Subscription added successfully")),
-        );
-        Navigator.pop(context); 
-      } else {
-        print("Failed to add subscription: ${response.body}");
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text("Failed to add subscription")));
-      }
-    } catch (e) {
-      print("Error: $e");
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text("An error occurred")));
-    }
+   void navy(){
+    Navigator.pop(context);
   }
 
   final TextEditingController descriptionController = TextEditingController();
@@ -111,6 +66,7 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
                             assetPath: 'assets/icons/header_icons/Back.svg',
                             alignment: Alignment.topLeft,
                             padding: EdgeInsets.only(left: 24),
+                            onTap: navy,
                           ),
                         ],
                       ),
@@ -205,7 +161,21 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
 
               GradientButton(
                 text: "Add this platform",
-                onPressed: submitSubscription,
+                onPressed: () {
+                  final selectedItem = subscriptions[selectedIndex];
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SubscriptionInfoScreen(
+                        imagePath: selectedItem.imagePath,
+                        name: selectedItem.name,
+                        price: '${monthlyPrice.toStringAsFixed(2)} SP',
+                        description: descriptionController.text,
+                      ),
+                    ),
+                  );
+                },
               ),
             ],
           ),

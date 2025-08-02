@@ -7,6 +7,7 @@ import 'package:trackizer/core/widgets/dottedBorder.dart';
 import 'package:trackizer/core/widgets/header.dart';
 import 'package:trackizer/core/widgets/spendings_widgets/budget_Item.dart';
 import 'package:trackizer/core/widgets/spendings_widgets/indecator.dart';
+import 'package:trackizer/features/screens/settings/settings_screen.dart';
 
 class BudgetsPage extends StatefulWidget {
   const BudgetsPage({super.key});
@@ -20,6 +21,10 @@ class _BudgetsPageState extends State<BudgetsPage> {
   void initState() {
     super.initState();
     fetchCategories();
+  }
+
+    void navy(){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
   }
 
   bool isLoaded = false;
@@ -60,6 +65,7 @@ class _BudgetsPageState extends State<BudgetsPage> {
                       assetPath: 'assets/icons/Settings.svg',
                       alignment: Alignment.topRight,
                       padding: EdgeInsets.only(right: 24),
+                      onTap: navy,
                     ),
                   ],
                 ),

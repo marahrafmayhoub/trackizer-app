@@ -36,97 +36,101 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.myBackground,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 58),
-              child: MainLogo(width: 146.w, height: 24.h),
-            ),
-            SizedBox(height: 165.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    LabeledTextField(
-                      label: 'Login',
-                      controller: emailController
-                    ),
-                    SizedBox(height: 16.h),
-                    LabeledTextField(
-                      label: 'Password',
-                      controller: passwordController,
-                      obscureText: true,
-                    ),
-                    SizedBox(height: 24.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                right: 8,
-                              ), // المسافة من اليمين فقط
-                              child: SizedBox(
-                                width: 24,
-                                height: 24,
-                                child: Checkbox(
-                                  value: rememberMe,
-                                  onChanged: (value) =>
-                                      setState(() => rememberMe = value!),
-                                  activeColor: AppColors.myOrange,
-                                  side: BorderSide(
-                                    color: AppColors.mybordercolor,
-                                    width: 1.5,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 58),
+                child: MainLogo(width: 146.w, height: 24.h),
+              ),
+              SizedBox(height: 165.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      LabeledTextField(
+                        label: 'Login',
+                        controller: emailController
+                      ),
+                      SizedBox(height: 16.h),
+                      LabeledTextField(
+                        label: 'Password',
+                        controller: passwordController,
+                        obscureText: true,
+                      ),
+                      SizedBox(height: 24.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  right: 8,
+                                ), // المسافة من اليمين فقط
+                                child: SizedBox(
+                                  width: 24,
+                                  height: 24,
+                                  child: Checkbox(
+                                    value: rememberMe,
+                                    onChanged: (value) =>
+                                        setState(() => rememberMe = value!),
+                                    activeColor: AppColors.myOrange,
+                                    side: BorderSide(
+                                      color: AppColors.mybordercolor,
+                                      width: 1.5,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    visualDensity: VisualDensity.compact,
                                   ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.shrinkWrap,
-                                  visualDensity: VisualDensity.compact,
                                 ),
                               ),
-                            ),
-
-                            AppText(
-                              text: 'Remember me',
-                              color: AppColors.myText,
-                              fontSize: 14,
-                            ),
-                          ],
-                        ),
-                        AppText(
-                          text: 'Forget Password',
-                          fontSize: 14,
-                          color: AppColors.myText,
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 24.h),
-                    GradientButton(text: 'Sign In', onPressed: (){
-                                            Navigator.push(context, MaterialPageRoute(builder: (context)=> Home2()));
-
-                    }),
-                    SizedBox(height: 152.h),
-                    AppText(
-                      text: "If you don't have an account yet?",
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    SizedBox(height: 20.h),
-                    CustomButton(text: 'Sign Up', onPressed: () {
-                                            Navigator.push(context, MaterialPageRoute(builder: (context)=> Register1()));
-
-                    }),
-                  ],
+        
+                              AppText(
+                                text: 'Remember me',
+                                color: AppColors.myText,
+                                fontSize: 14,
+                              ),
+                            ],
+                          ),
+                          AppText(
+                            text: 'Forget Password',
+                            fontSize: 14,
+                            color: AppColors.myText,
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 24.h),
+                      GradientButton(text: 'Sign In', onPressed: (){
+                                              Navigator.push(context, MaterialPageRoute(builder: (context)=> Home2()));
+        
+                      }),
+                      SizedBox(height: 152.h),
+                      AppText(
+                        text: "If you don't have an account yet?",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      SizedBox(height: 20.h),
+                      CustomButton(text: 'Sign Up', onPressed: () {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context)=> Register1()));
+        
+                      }),
+                                          SizedBox(height: 30.h),
+        
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

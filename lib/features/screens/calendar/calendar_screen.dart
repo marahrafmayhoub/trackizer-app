@@ -9,6 +9,7 @@ import 'package:trackizer/core/widgets/bottomNavbar.dart';
 import 'package:trackizer/core/widgets/custom_column.dart';
 import 'package:trackizer/core/widgets/header.dart';
 import 'package:trackizer/core/widgets/subscription_widgets/sbscriprionModel.dart';
+import 'package:trackizer/features/screens/settings/settings_screen.dart';
 
 
 class CalendarScreen extends StatefulWidget {
@@ -22,6 +23,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
   final days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
   final dates = ['08', '09', '10', '11', '12', '13', '14'];
   int currentIndex = 0;
+
+    void navy(){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +55,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                           assetPath: 'assets/icons/Settings.svg',
                           alignment: Alignment.centerRight,
                           padding: EdgeInsets.only(right: 32),
+                          onTap: navy,
                         ),
                       ],
                     ),
@@ -182,8 +188,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 252.h,
+            Expanded(
               child: GridView.builder(
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 shrinkWrap: true,

@@ -21,7 +21,7 @@ class HomeCard1 extends StatelessWidget {
     return Container(
       height: 64,
       alignment: Alignment.center,
-      margin: const EdgeInsets.symmetric(horizontal: 24),
+      // margin: const EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.mybordercolor),
         borderRadius: const BorderRadius.all(Radius.circular(16)),
