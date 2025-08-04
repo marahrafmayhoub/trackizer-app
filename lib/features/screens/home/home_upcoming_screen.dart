@@ -25,11 +25,11 @@ class Home2 extends StatefulWidget {
 class _Home2State extends State<Home2> {
   int navIndex = 0;
 
-  final List<Widget> screens = const [
-    HomeContent(), 
+  final List<Widget> screens = [
+    const HomeContent(), 
     BudgetsPage(),
-    CalendarScreen(),
-    CreditCardsScreen(),
+    const CalendarScreen(),
+    const CreditCardsScreen(),
   ];
 
   @override

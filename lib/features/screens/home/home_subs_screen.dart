@@ -39,8 +39,11 @@ class _HomeContentState extends State<HomeContent>
     fetchSubscriptions();
   }
 
-  void navy(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
+  void navy() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SettingsScreen()),
+    );
   }
 
   Future<void> fetchSubscriptions() async {
@@ -208,13 +211,15 @@ class _HomeContentState extends State<HomeContent>
                                     pointers: <GaugePointer>[
                                       RangePointer(
                                         value: _gaugeValue,
-                                        width: 0.16,
+                                        width: 0.14,
                                         color: AppColors.myOrange.withOpacity(
-                                          0.3,
+                                          0.2,
                                         ),
+                                        pointerOffset: -0.02,
                                         cornerStyle: CornerStyle.bothCurve,
                                         sizeUnit: GaugeSizeUnit.factor,
                                       ),
+
                                       RangePointer(
                                         value: _gaugeValue,
                                         width: 0.1,
@@ -358,7 +363,8 @@ class _HomeContentState extends State<HomeContent>
 
                   const SizedBox(height: 16),
 
-                  SizedBox(height: 150,
+                  SizedBox(
+                    height: 150,
                     child: TabBarView(
                       children: [
                         isLoading
@@ -367,7 +373,7 @@ class _HomeContentState extends State<HomeContent>
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 24,
                                 ),
-                                
+
                                 itemCount: subscriptions.length,
                                 itemBuilder: (context, index) {
                                   final sub = subscriptions[index];
