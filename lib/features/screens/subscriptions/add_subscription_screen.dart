@@ -22,7 +22,7 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
   double monthlyPrice = 5.99;
   int selectedIndex = 1;
 
-   void navy(){
+  void navy() {
     Navigator.pop(context);
   }
 
@@ -177,6 +177,7 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
                   );
                 },
               ),
+              const SizedBox(height: 24),
             ],
           ),
         ),

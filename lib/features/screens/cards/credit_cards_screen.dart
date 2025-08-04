@@ -174,7 +174,7 @@ class _CreditCardsScreenState extends State<CreditCardsScreen> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 24),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Align(alignment: Alignment.topCenter,
                     child: AddCardButton(
                       text: 'Add new card',
